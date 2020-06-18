@@ -4,11 +4,52 @@
 </head>
 <body>
     <script>
-        let throwHand = ["Scissors", "Paper", "Rock"];
+        let throwHand = ["scissors", "paper", "rock"];
+        let score = 0;
         function computerPlay(){
             let hand = Math.floor(Math.random()*3);
             return throwHand[hand];
         }
+
+        function playRound(playerSelection, computerSelection){
+            console.log("You threw " + playerSelection + '!');
+            console.log("Opponent threw " + computerSelection + '!');
+            
+            switch(playerSelection){
+                case "scissors":
+                    if(computerSelection == "scissors"){
+                        console.log("DRAW!")
+                    }else if(computerSelection == "paper"){
+                        console.log("WIN!")
+                        score++;
+                    }else{
+                        console.log("LOSE!")
+                    }
+                    break;
+                case "paper":
+                    if(computerSelection == "scissors"){
+                            console.log("LOSE!")
+                        }else if(computerSelection == "paper"){
+                            console.log("DRAW!")
+                        }else{
+                            console.log("WIN!")
+                            score++;
+                        }
+                        break;
+                case "rock":
+                    if(computerSelection == "scissors"){
+                            console.log("WIN!")
+                            score++;
+                        }else if(computerSelection == "paper"){
+                            console.log("LOSE!")
+                        }else{
+                            console.log("DRAW!")
+                        }
+                        break;
+            }
+        }
+        
+
     </script>
     
 </body>
