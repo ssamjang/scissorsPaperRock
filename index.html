@@ -49,6 +49,24 @@
             }
         }
         
+        function game() {
+            score = 0; //reset score and round number
+            round = 1;
+            console.log("Welcome to Scissors Paper Rock")
+            while (score < 5){
+                console.log("Round: "+round);
+                console.log("Current Score: "+ score);
+                console.log("Type your choice...");
+                
+                //Inputs
+                let playerChoice = prompt();
+                playRound(playerChoice, computerPlay());
+                round++;
+            }
+
+            console.log("Game over");
+
+        }
 
     </script>
     
